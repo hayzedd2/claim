@@ -1,10 +1,10 @@
-# Chowdeck Voucher System — Specification & PRD
+# Claim Voucher System — Specification & PRD
 
 ## 1. Overview & Architecture
-The **Chowdeck Voucher System** is a full-stack learning project consisting of a **Go REST API** backend and a **Vite (React + TypeScript)** frontend hosted in a monorepo setup. The application enables users to create customizable promotional or gift vouchers and allows other users to redeem them under strict business constraints.
+The **Claim Voucher System** is a full-stack learning project consisting of a **Go REST API** backend and a **Vite (React + TypeScript)** frontend hosted in a monorepo setup. The application enables users to create customizable promotional or gift vouchers and allows other users to redeem them under strict business constraints.
 
 ```
-chowdeck-voucher-system/
+claim/
 ├── go.mod
 ├── go.sum
 ├── main.go               # Go entry point & API router
@@ -95,7 +95,7 @@ Creates a new voucher.
 ```json
 {
   "name": "Team Dev Lunch",
-  "code": "CHOWDEV2026",
+  "code": "CLAIM2026",
   "amount": 5000,
   "max_redemptions": 10,
   "expiry_date": "2026-10-01T23:59:59Z",
@@ -109,7 +109,7 @@ Creates a new voucher.
 {
   "id": "c7a2b9f8-1234-4567-89ab-cdef01234567",
   "name": "Team Dev Lunch",
-  "code": "CHOWDEV2026",
+  "code": "CLAIM2026",
   "amount": 5000,
   "max_redemptions": 10,
   "current_redemptions": 0,
@@ -127,7 +127,7 @@ Fetches public voucher details prior to redemption (without exposing the answer)
 **Response (200 OK):**
 ```json
 {
-  "code": "CHOWDEV2026",
+  "code": "CLAIM2026",
   "name": "Team Dev Lunch",
   "amount": 5000,
   "remaining_redemptions": 10,
@@ -173,7 +173,7 @@ Screen/Dashboard tracking endpoint for creators to inspect who redeemed the vouc
 ```json
 {
   "voucher": {
-    "code": "CHOWDEV2026",
+    "code": "CLAIM2026",
     "name": "Team Dev Lunch",
     "amount": 5000,
     "max_redemptions": 10,
