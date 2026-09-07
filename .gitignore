@@ -12,6 +12,7 @@
 *.dylib
 dist/
 bin/
+node_modules/
 
 # Environment variables
 .env
@@ -24,4 +25,5 @@ Thumbs.db
 .vscode/
 
 
-.project-scope.md
+project-scope.md
+API_DOCS.md
