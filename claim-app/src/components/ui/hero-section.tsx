@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "./button";
 
 
@@ -11,8 +12,8 @@ export function HeroSection() {
           <p>This probably only recreates like ~50% of the real thing but it is a good learning experience.
           </p>
           <div className="flex gap-2 mt-2">
-            <Button className="cursor-pointer" variant={"outline"}>Redeem a voucher</Button>
-            <Button className="cursor-pointer">Create a voucher</Button>       
+          <Link to={"/redeem"}>  <Button className="cursor-pointer" variant={"outline"}>Redeem a voucher</Button></Link>
+          <Link to={"/create"}>  <Button className="cursor-pointer">Create a voucher</Button>  </Link>    
           </div>
         </div>
       </div>
