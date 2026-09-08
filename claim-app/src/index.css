@@ -4,6 +4,7 @@
 @import "@fontsource-variable/inter";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant hover (&:hover);
 
 @theme inline {
     --font-heading: var(--font-sans);
@@ -127,4 +128,10 @@
   html {
     @apply font-sans;
     }
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #fff inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+  -webkit-text-fill-color: #000c0a !important;
 }

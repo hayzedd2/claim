@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom"
 export function AppLayout() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* <Navbar /> */}
       <main className="flex-1 flex flex-col h-full  container mx-auto max-w-6xl px-4 py-8 sm:px-6">
         <Outlet />
       </main>
