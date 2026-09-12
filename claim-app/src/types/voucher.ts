@@ -14,6 +14,7 @@ export interface PublicVoucher {
   code: string
   name: string
   amount: number
+  expiry_date: string
   remaining_redemptions: number
   is_expired: boolean
   has_security_question: boolean
