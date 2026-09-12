@@ -55,13 +55,14 @@ type VoucherResponse struct {
 }
 
 type PublicVoucherResponse struct {
-	Code                 string  `json:"code"`
-	Name                 string  `json:"name"`
-	Amount               int64   `json:"amount"`
-	RemainingRedemptions int     `json:"remaining_redemptions"`
-	IsExpired            bool    `json:"is_expired"`
-	HasSecurityQuestion  bool    `json:"has_security_question"`
-	SecurityQuestion     *string `json:"security_question,omitempty"`
+	Code                 string    `json:"code"`
+	Name                 string    `json:"name"`
+	Amount               int64     `json:"amount"`
+	ExpiryDate           time.Time `json:"expiry_date"`
+	RemainingRedemptions int       `json:"remaining_redemptions"`
+	IsExpired            bool      `json:"is_expired"`
+	HasSecurityQuestion  bool      `json:"has_security_question"`
+	SecurityQuestion     *string   `json:"security_question,omitempty"`
 }
 
 type RedeemRequest struct {
@@ -190,6 +191,7 @@ func (h *Handler) GetVoucher(w http.ResponseWriter, r *http.Request) {
 		Code:                 v.Code,
 		Name:                 v.Name,
 		Amount:               v.Amount,
+		ExpiryDate:           v.ExpiryDate,
 		RemainingRedemptions: v.RemainingRedemptions(),
 		IsExpired:            v.IsExpired(),
 		HasSecurityQuestion:  v.HasSecurityQuestion(),
